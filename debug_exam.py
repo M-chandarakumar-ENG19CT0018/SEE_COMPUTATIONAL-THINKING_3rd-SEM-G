@@ -90,6 +90,18 @@ data1
 data2 (should remain the same)
 dup (the dictionary returned)
 '''
+def uniqueUpdate(data1,data2):
+dupKeys = {}
+Kfound = True
+for [k,v2] in data2:
+if k in data1:
+v1 = data1[k]
+if v1 != v2:
+dupKeys[k] = [v1 , v2]
+del data1[k]
+else:
+data1[k] = v2
+return dupKeys
 
 import sys
 if __name__ == '__main__':
